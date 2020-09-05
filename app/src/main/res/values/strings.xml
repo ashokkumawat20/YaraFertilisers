@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Yara Fertilisers</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="prompt">Fee Mode...</string>
+</resources>

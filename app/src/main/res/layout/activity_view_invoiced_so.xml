@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/bg_color"
+android:focusable="true"
+android:focusableInTouchMode="true"
+tools:context=".Activity.ViewInvoicedSOActivity">
+
+<!-- Header aligned to top -->
+
+<RelativeLayout
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        android:background="#223458"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_weight=".8"
+            android:gravity="center|center_horizontal"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:text="Invoiced Sales Order"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_weight=".2"
+            android:src="@drawable/yara_logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/l1"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_spinner_background"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".8"
+            android:background="@null"
+            android:hint="Search Invoice..."
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@color/text_c"
+            android:textColorHint="@color/color_faintgray"
+            android:textSize="@dimen/text_title" />
+
+        <ImageView
+            android:id="@+id/serach_hide"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".2"
+            android:src="@drawable/search" />
+
+        <ImageView
+            android:id="@+id/clear"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".2"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+<!-- Footer aligned to bottom -->
+
+<RelativeLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:gravity="center">
+
+
+
+
+
+</RelativeLayout>
+
+
+<!-- Scrollable Item below header and above footer -->
+
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/footer"
+    android:layout_below="@id/header"
+    android:layout_marginLeft="@dimen/spacing_medium"
+    android:layout_marginRight="@dimen/spacing_medium"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pendingSOList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="60dp"
+        android:paddingTop="3dp" />
+
+</LinearLayout>
+
+
+</RelativeLayout>
